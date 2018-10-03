@@ -18,6 +18,7 @@ export class PainelComponent implements OnInit {
   public rodadaFrase: Frases
   public tentativas: number = 3
 
+  public progresso: number = 0
 
   constructor() {
     this.rodadaFrase = this.frases[this.rodada]
@@ -40,6 +41,8 @@ export class PainelComponent implements OnInit {
       this.rodada++
       console.log(this.rodada)
       this.rodadaFrase = this.frases[this.rodada]
+      this.progresso = this.progresso + 25
+
     } else {
       alert('você errou')
       this.tentativas--
